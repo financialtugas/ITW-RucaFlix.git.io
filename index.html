@@ -182,7 +182,9 @@
 </div>
 
 <div class="netflix-slider">
-  <h2>Continue watching...</h2>
+  <h4 style="margin-left: 5%;">
+    Continuar a ver
+  </h4>
   <div class="swiper-container">
     <div class="swiper-wrapper"  data-bind="foreach: viewModel.movies">
       <div class="swiper-slide"><img  data-bind="attr: {src: imgUrl, alt:slideNum}"/></div>
@@ -295,68 +297,13 @@
         <!-------------------- end of Footer --------------------->
         
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script
-			  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-			  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-			  crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>              
         <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
-      
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         
-        <script type="text/javascript">
-        
-        
-        // const settings = {
-          //   "async": true,
-          //   "crossDomain": true,
-          //   "url": "https://unogsng.p.rapidapi.com/images?netflixid=81037848&offset=3&limit=2",
-          //   "method": "GET",
-          //   "headers": {
-            //     "x-rapidapi-key": "d8d5a56404msh192545404e9c9f8p1d2548jsn8b9c8587e074",
-            //     "x-rapidapi-host": "unogsng.p.rapidapi.com"
-            //   }
-            // };
-            
-            // $.ajax(settings).done(function (response) {
-              //   console.log(response);
-              // });
-              
-            
-            
-            
-            
-            // try {
-              //   const response = await fetch("https://netflix-unofficial.p.rapidapi.com/api/directors", {
-                //       "headers": {
-                  //         "x-rapidapi-key": "d8d5a56404msh192545404e9c9f8p1d2548jsn8b9c8587e074",
-                  //         "x-rapidapi-host": "netflix-unofficial.p.rapidapi.com"
-                  //       }
-                  //   })
-                  //   const data = response.json();
-                  //   console.log(data)
-                  // } catch (error) {
-                    //   console.error(error);         
-                    // }
-                    
-                    </script>
-<script src="scripts/carroussel-slider-script.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 6,
-    spaceBetween: 10,
-    slidesPerGroup: 2,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
-</script>
-<script src="scripts/script.js"></script>
+        <!-- index script -->
+        <script src="scripts/script.js"></script>
 
 </body>
 </html>

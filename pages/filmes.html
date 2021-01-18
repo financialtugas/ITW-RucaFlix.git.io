@@ -114,7 +114,7 @@
       <div style="margin-top: 100px; margin-left:0;">
         <section class="moviesSection hidden top10">
           <div class="container">
-            <h1 class="header">10 más populares en México hoy</h1>
+            <h1 class="header">10 mais populares em Portugal</h1>
             <div class="cards moviesWrapper" ></div>
           </div>
         </section>
@@ -179,7 +179,9 @@
                 <a class="btn btn-sm" data-bind="attr: { href:'./titleDetails.html?id=' + Id }">
                     <i class="fa fa-eye" title="Selecione para ver detalhes"></i>
                 </a>
-                <button class="btn btn-sm" data-bind="click: addFavourite.bind($data, id)>
+                <button class="btn btn-sm" 
+                data-bind="click:  $parent.addFavourite($data,Id)"
+                >
                     <i class="fa fa-heart" style="color:white"  data-bind="attr : { 'id': 'favourite_'+Id }" title="Selecione para adicionar aos favoritos"></i>
                 </button>
             </td>

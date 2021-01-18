@@ -8,6 +8,7 @@ var vm = function () {
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     self.records = ko.observableArray([]);
+    self.likesMovies = ko.observableArray([]);
     self.currentPage = ko.observable(1);
     self.pagesize = ko.observable(20);
     self.totalRecords = ko.observable(50);
@@ -42,6 +43,29 @@ var vm = function () {
             list.push(i + step);
         return list;
     };
+
+
+//ADD TO FAVORITES
+
+
+// data-bind="click: addFavourite.bind($data, id)"
+
+// self.addFavorite(id){
+    // }
+    
+    // self.addFavorite = ko.computed((data, id) =>{
+        
+    //     return self.likesMovies.push(id);
+    // }, self)
+
+    // self.addFavorite = () => {
+    //     console.log(id);
+    //     return self.likesMovies.push(id);
+    // }
+//     likeMovies.push(Id);
+// localStorage.setItem('LikesMovies', likesMovies);
+
+// localStorage.setItem('myCat', 'Tom');
 
     //--- Page Events
     self.activate = function (id) {
