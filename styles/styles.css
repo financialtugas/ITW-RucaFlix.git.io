@@ -7,6 +7,22 @@ body{
   color:white;
 }
 
+/* 
+opacity: 0;
+animation: fade-in 500ms ease 200ms 1 forwards;
+}
+
+@keyframes fade-in {
+0% {
+opacity: 0;
+transform: scale(1.2);
+}
+100% {
+opacity: 1;
+transform: scale(1);
+}
+} */
+
 .bg-dark {
   background:transparent !important;
   transition:0.75s ease;
@@ -32,21 +48,58 @@ body{
   color:white;
 }
 
+/* autocomplete */
+
+.ui-autocomplete{
+  background-color: white;
+  background: white;
+}
+
+.ui-menu-item{
+  color: red  ;
+}
+
+
 /* top image */
 
 .jumbotron{
   margin:0px;
   padding:0px; 
+  min-width: 100%;
   height:600px; 
   background: transparent;
   background: linear-gradient(0deg, #000000 -40.85%, rgba(0, 0, 0, 0) 100%), url('../public/imgs/960x0.jpg'); 
-  background-position:center center;
   background-size:cover;
   background-repeat:no-repeat;
 
 }
 
-/* table dos filmes  */
+/* #myVideo {
+ 
+  position: absolute;
+   right: 0;
+   bottom:0;
+   min-width: 100%;
+   min-height: 100%;
+   background-image:url('https://thumbs.gfycat.com/AffectionateInfiniteGuernseycow-size_restricted.gif'); 
+    background-repeat: no-repeat;
+    background-size: cover; 
+   
+  } */
+
+/* btn da rucaflix */
+
+.btn-outline-ruca{
+  color:#8C52FF; 
+  border-color:#8C52FF;
+}
+.btn-outline-ruca:hover{
+  background-color:#8C52FF;
+  color:white;
+}
+
+
+  /* table dos filmes  */
 
 .table{
   color:white;

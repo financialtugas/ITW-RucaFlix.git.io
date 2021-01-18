@@ -1,5 +1,3 @@
-// ViewModel KnockOut
-
 
 // ViewModel KnockOut
 var vm = function () {
@@ -10,7 +8,8 @@ var vm = function () {
   self.displayName = 'Titles List';
   self.error = ko.observable('');
   self.passingMessage = ko.observable('');
-  self.records = ko.observableArray([]);
+  self.records = ko.observableArray([])
+  self.likesMovies = ko.observableArray([]);
   self.currentPage = ko.observable(1);
   self.pagesize = ko.observable(20);
   self.totalRecords = ko.observable(50);
@@ -44,6 +43,23 @@ var vm = function () {
           list.push(i + step);
       return list;
   };
+
+//ADD TO FAVORITES
+
+
+// data-bind="click: addFavourite.bind($data, id)"
+
+// self.addFavorite(id){
+    // }
+    
+    self.addFavorite.computed(() =>{
+            console.log(Id);
+    //     likeMovies.push(Id);
+    // localStorage.setItem('LikesMovies', likesMovies);
+})
+// localStorage.setItem('myCat', 'Tom');
+
+
   //--- Page Events
   self.activate = function (id) {
       console.log('CALL: getTitle...');
@@ -132,7 +148,6 @@ $(window).scroll(function(){
     $('nav').toggleClass('scrolled', $(this).scrollTop() > 100);
 });
 
-//
 
 const viewModel = {
   movies: [
@@ -182,35 +197,24 @@ const viewModel = {
   ]
 }
 
-// $("#searchBar").autocomplete({
-//     minLength: 4,
-//     source: function(request, response) {
-//       $.ajax({
-//         type: "GET",
-//         url: "http://192.168.160.58/netflix/api/api/Search/Titles?name={name}",
-//         data: "{'name':'"+ $('#searchBar').val() + "'}",
-//         dataType: "json",
-//         success: function(data) {
-//           console.log(data)
-//         response(data);
-//       },
-//       error: function(result) {
-//         alert(result.statusText);
-//       }
-//     });
-//   }});
 
   $("#searchBar").autocomplete({
+    minLength: 3,
     source: function(request, response) {
         $.ajax({
             url: "http://192.168.160.58/netflix/api/Search/Titles",
             type: 'get',
             dataType:'json',
             data:{
-                'name': request.term
+                'Name': request.term
             },
         }).done(data =>{
-            console.log(data)
+            // console.log(data)
+            let i=0
+            response($.each(data, (key, item) => {
+                i++;
+                if(i<11) return ({label:item.Name})
+            }))
         })
     }
 });
@@ -224,9 +228,3 @@ $(document).ready(function () {
 });
 
 
-
-data-bind="click: addFavourite.bind($data, id)"
-
-self.addFavorite(id){
-    console.log(id);
-}
