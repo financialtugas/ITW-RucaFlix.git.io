@@ -26,6 +26,7 @@ var vm = function () {
         return Math.min(self.currentPage() * self.pagesize(), self.totalRecords());
     }, self);
     self.totalPages = ko.observable(0);
+
     self.pageArray = function () {
         var list = [];
         var size = Math.min(self.totalPages(), 9);
@@ -41,6 +42,7 @@ var vm = function () {
             list.push(i + step);
         return list;
     };
+
     //--- Page Events
     self.activate = function (id) {
         console.log('CALL: getTitle...');
@@ -111,6 +113,10 @@ var vm = function () {
         self.activate(pg);
     }
 };
+
+$(window).scroll(function(){
+    $('nav').toggleClass('scrolled', $(this).scrollTop() > 100);
+});
 
 $(document).ready(function () {
     console.log("ready!");

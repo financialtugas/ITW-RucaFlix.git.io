@@ -1,24 +1,6 @@
 // ViewModel KnockOut
 
 
-  $("#searchBar").autocomplete({
-    minLength: 4,
-    source: function(request, response) {
-      $.ajax({
-        type: "GET",
-        url: "http://192.168.160.58/netflix/api/api/Search/Titles?name={name}",
-        data: "{'name':'"+ $('#searchBar').val() + "'}",
-        dataType: "json",
-        success: function(data) {
-          console.log(data)
-        response(data);
-      },
-      error: function(result) {
-        alert(result.statusText);
-      }
-    });
-  }});
-
 // ViewModel KnockOut
 var vm = function () {
   console.log('ViewModel initiated...');
@@ -134,6 +116,24 @@ var vm = function () {
 };
 
 
+//modal pop-up when the user clicks on a movie card
+$('.swiper-slide').click(function(event) {
+    event.preventDefault();
+    this.blur(); // Manually remove focus from clicked link.
+  $.get(this.href,  function(html) {
+    $(html).appendTo('body').modal();
+  });
+});
+$('#movie-card').modal('show')
+
+
+//nav-bar to transparent
+$(window).scroll(function(){
+    $('nav').toggleClass('scrolled', $(this).scrollTop() > 100);
+});
+
+//
+
 const viewModel = {
   movies: [
       { 
@@ -182,6 +182,39 @@ const viewModel = {
   ]
 }
 
+// $("#searchBar").autocomplete({
+//     minLength: 4,
+//     source: function(request, response) {
+//       $.ajax({
+//         type: "GET",
+//         url: "http://192.168.160.58/netflix/api/api/Search/Titles?name={name}",
+//         data: "{'name':'"+ $('#searchBar').val() + "'}",
+//         dataType: "json",
+//         success: function(data) {
+//           console.log(data)
+//         response(data);
+//       },
+//       error: function(result) {
+//         alert(result.statusText);
+//       }
+//     });
+//   }});
+
+  $("#searchBar").autocomplete({
+    source: function(request, response) {
+        $.ajax({
+            url: "http://192.168.160.58/netflix/api/Search/Titles",
+            type: 'get',
+            dataType:'json',
+            data:{
+                'name': request.term
+            },
+        }).done(data =>{
+            console.log(data)
+        })
+    }
+});
+
 $(document).ready(function () {
   console.log(viewModel)
   ko.applyBindings(viewModel);
@@ -189,3 +222,11 @@ $(document).ready(function () {
   ko.applyBindings(new vm());
 
 });
+
+
+
+data-bind="click: addFavourite.bind($data, id)"
+
+self.addFavorite(id){
+    console.log(id);
+}

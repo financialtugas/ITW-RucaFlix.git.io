@@ -1,8 +1,10 @@
+/* document */
 
 body{
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   background: black;
+  color:white;
 }
 
 .bg-dark {
@@ -13,7 +15,9 @@ body{
   background:#000 !important;
 }
 
-.dropdown-menu{
+/* dropdown da nav */
+
+.dropdown-menu{   
   background-color: black;
   margin-top: 0;
 }
@@ -28,24 +32,37 @@ body{
   color:white;
 }
 
+/* top image */
+
 .jumbotron{
   margin:0px;
   padding:0px; 
-  height:500px; 
-  margin-bottom:20px;
+  height:600px; 
   background: transparent;
-  background: linear-gradient(0deg, #000000 -40.85%, rgba(0, 0, 0, 0) 100%), url('../public/imgs/KidsMainImage.png'); 
+  background: linear-gradient(0deg, #000000 -40.85%, rgba(0, 0, 0, 0) 100%), url('../public/imgs/960x0.jpg'); 
   background-position:center center;
   background-size:cover;
   background-repeat:no-repeat;
 
 }
 
+/* table dos filmes  */
+
+.table{
+  color:white;
+}
+
+
+/* slider dos filmes  */
+
 .card-slider{
   width: 500px;
   height: 500px;
   margin-right: 40px;
 }
+
+
+/* footer */
 
 footer {
   position: absolute;
