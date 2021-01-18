@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css"> 
+    
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">    
+    <link href="Content/themes/ui-darkness/jquery.ui.base.css"rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- styles -->
+    <link href="styles/styles.css" rel="stylesheet">
+    <link href="styles/carrousel-netflix-slider.css" rel="stylesheet">
+    <link href="styles/carrousel-netflix-slider-copy.css" rel="stylesheet">
+    <link href="styles/carrousel-slider.css" rel="stylesheet">
+    <link href="styles/movie-card.css" rel="stylesheet">
+
+    <!-- swiper for the slider -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- favicon -->
+    <link rel='icon' href='public/logo/favicon.svg' type='image/x-icon' />
+
+    <title>Netflix Project</title>
+</head>
+<body>
+        <!---------------- Navbar lg and xl screen--------------------->
+        <div class="d-none d-lg-block d-xl-block0">
+          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            
+              <a class="navbar-brand" href="#"><img src="public/logo/Netflix.svg" alt="" title="" /></a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active pr-2">
+                  <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item pr-2">
+                  <a class="nav-link" href="#">Séries</a>
+                </li>
+                <li class="nav-item pr-2">
+                  <a class="nav-link" href="pages/filmes.html">Filmes</a>
+                </li>
+                <li class="nav-item pr-2">
+                  <a class="nav-link" href="#">Novidades mais vistas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">A minha lista</a>
+                </li>
+              </ul>
+  
+              <div class="dropdown">
+                  <a class="dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img src="public/icons/favicon.svg" alt="" style="width: 32px; height: 32px;"/>
+                  </a>
+                
+                  <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#"><img src="public/icons/ruben.svg" alt="" style="width: 32px; height: 32px; margin-right: 10px;"/>Ruben Rocha</a>
+                    <a class="dropdown-item" href="#"><img src="public/icons/binu.svg" alt="" style="width: 32px; height: 32px; margin-right: 10px;"/>Catarina Santos</a>
+                    <a class="dropdown-item" href="#">Gerir Perfis</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Conta</a>
+                    <a class="dropdown-item" href="#">Centro de Assistência</a>
+                    <a class="dropdown-item" href="pages/landing-page.html">Sair da Netflix</a>
+                  </div>
+                </div>
+  
+              
+              <form class="form-inline ml-2 mt-2 mt-md-0">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="searchBar">
+                  <button class="btn btn-outline-danger  my-2 my-sm-0" type="submit">Search</button>
+              </form>
+
+              
+            </div>
+  
+          </nav>
+        </div>
+
+        <!---------------- end of Navbar lg and xl screen--------------------->
+
+        <!---------------- Navbar  xs to lg--------------------->
+          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark d-xs-block d-sm-block d-md-block d-lg-none">
+            
+              <a class="navbar-brand" href="#"><img src="public/logo/mini-logo.svg" alt="" title="" style="height: 40px; width: 40px;"/></a>
+            
+              <div class="dropdown ml-auto">
+                  <a class="dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img src="public/icons/favicon.svg" alt="" style="width: 32px; height: 32px;"/>
+                  </a>
+                
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#"><img src="public/icons/ruben.svg" alt="" style="width: 32px; height: 32px; margin-right: 10px;"/>Ruben Rocha</a>
+                    <a class="dropdown-item" href="#"><img src="public/icons/binu.svg" alt="" style="width: 32px; height: 32px; margin-right: 10px;"/>Catarina Santos</a>
+                    <a class="dropdown-item" href="#">Gerir Perfis</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Conta</a>
+                    <a class="dropdown-item" href="#">Centro de Assistência</a>
+                    <a class="dropdown-item" href="#">Sair da Netflix</a>
+                  </div>
+                </div>
+
+          </nav>
+
+        <!---------------- end of Navbar xs to lg--------------------->
+
+
+        <!---------------- Top image ------------------------>
+
+        <div class="jumbotron">
+        </div>
+            <div class="leftbox" style="z-index: 2;">
+            <p id="item">Cambridge Analytica</p>
+            <p id="content">Netflix is the home of amazing original programming that you can't find<br> anywhere else. Movies, TV shows, specials and more, it's all tailored <br>specifically to you.</p><br>
+  
+            <button id="myBtn">▷ Watch now</button>    <button id="myBtn">＋ Add to list</button>
+            <br><br><br><br><br><br>
+            <h id="continue">Continue watching with the profile XXX</h>
+            </div>
+
+        <!---------------- end of Top image ------------------------>
+
+        <div >
+
+
+          <h4 style="margin-left: 5% ; margin-bottom: 30px; color:white; ">
+            Novidades Mais Vistas
+          </h4>
+  
+          <!---------------- Carrousel lg and xl screen------------------------>
+  
+<div class="netflix-slider">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" onclick=""><img src="https://occ-0-1567-1123.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABRvngexxF8H1-OzRWFSj6ddD-aB93tTBP9kMNz3cIVfuIfLEP1E_0saiNAwOtrM6xSOXvoiSCMsihWSkW0dq808-R7_lBnr6WHbjkKBX6I3sD0uCcS8kSPbRjEDdG8CeeVXEAEV6spQ.webp" alt="Movie Title"></div>
+      <div class="swiper-slide"><img src="https://occ-0-1567-1123.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABRvngexxF8H1-OzRWFSj6ddD-aB93tTBP9kMNz3cIVfuIfLEP1E_0saiNAwOtrM6xSOXvoiSCMsihWSkW0dq808-R7_lBnr6WHbjkKBX6I3sD0uCcS8kSPbRjEDdG8CeeVXEAEV6spQ.webp" alt="Movie Title"></div>
+      <div class="swiper-slide"><img src="https://occ-0-243-299.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABZEK-7pZ1H5FD4cTyUb9qB_KeyJGz5p-kfPhCFv4GU_3mbdm8Xfsy4IBchlG9PFNdGff8cBNPaeMra72VFnot41nt0y3e8RLgaVwwh3UvyM2H2_MkmadWbQUeGuf811K7-cxJJh7gA.jpg" alt="Movie Title"></div>
+      <div class="swiper-slide"><img src="https://occ-0-243-299.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABQCoK53qihwVPLRxPEDX98nyYpGbxgi5cc0ZOM4iHQu7KQvtgNyaNM5PsgI0vy5g3rLPZdjGCFr1EggrCPXpL77p2H08jV0tNEmIfs_e8KUfvBJ6Ay5nM4UM1dl-58xA6t1swmautOM.webp" alt="Movie Title"></div>
+      <div class="swiper-slide"><img src="https://occ-0-243-299.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABbcCX42tsqGbBvO2y9CQv5-7QvYbCfoHtXsuc6NPCtZaKa4l4fBX3XWvUwG9F2A3CTsNpHVmulxBbdXKwK8Q6xGjejd9FoadGkZ7CnGrSl601TOQjzSHJ23NuIPC8j0QMGORL4uRIA.jpg" alt="Movie Title"></div>
+      <div class="swiper-slide"><img src="https://occ-0-243-299.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABdYtAqj8CyaJTWq5taD8Ro_UgwH3nne9QpFGVps-2J3IG-leqrfqXFii4jzZn48nPYTkrlwKQEV0R7_cEKlYBPRzdKqNODc-Oz26IL3LlLgFboXibIWXwxzeYxzuqn0I9TpARjeByw.jpg" alt="Movie Title"></div>
+      <div class="swiper-slide"><img src="https://occ-0-243-299.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABVopDZ5Fy9_fk_HO5WxHTXKKjKhtWFupbSjuvPwfLK_vytzon4EwRUdGgYJ34JwPxOTK_NkV3aXfkULMB0Dcct-FyfqzH-X44VXuRMp4QeBHlvKwWeZFpZlGdItPzmmg4scmwhG7SQ.jpg" alt="Movie Title"></div>
+      <div class="swiper-slide"><img src="img/8.jpg" alt="Movie Title"></div>
+      <div class="swiper-slide"><img src="img/9.jpg" alt="Movie Title"></div>
+      <div class="swiper-slide"><img src="img/10.jpg" alt="Movie Title"></div>
+    </div>
+    <!-- Add Pagination -->
+    <!-- <div class="swiper-pagination"></div> -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+
+<div class="netflix-slider">
+  <h2>Continue watching...</h2>
+  <div class="swiper-container">
+    <div class="swiper-wrapper"  data-bind="foreach: viewModel.movies">
+      <div class="swiper-slide"><img  data-bind="attr: {src: imgUrl, alt:slideNum}"/></div>
+    </div>
+    <!-- Add Pagination
+    <div class="swiper-pagination"></div> -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+
+
+                <!-- <div class="carousel-inner row w-100 mx-auto" role="listbox" data-bind="foreach: viewModel.movies">
+                    <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-2" data-bind="css: carrouselClass">
+                        <img class="img-fluid mx-auto d-block" data-bind="attr: {src: imgUrl, alt:slideNum}" style="border-radius: 10px;">
+                    </div>
+                </div> -->
+
+  
+  
+          <!---------------- end of Carrousel lg and xl screen------------------------>
+
+          <!---------------- Carrousel smaller screens ------------------------>
+          
+          
+          <div class="container-fluid d-xs-block d-sm-block d-md-block d-lg-none">
+            <div class="row flex-row flex-nowrap overflow-auto">
+              <div class="card cardShow card-block mx-2" style="min-width: 100px;"><img class="img-fluid mx-auto d-block" src="public/imgs/image_movie.png" alt="slide 1"></div>
+              <div class="card cardShow card-block mx-2" style="min-width: 100px; min-height: 200px;">Card</div>
+              <div class="card cardShow card-block mx-2" style="min-width: 100px; min-height: 200px;">Card</div>
+              <div class="card cardShow card-block mx-2" style="min-width: 100px; min-height: 200px;">Card</div>
+              <div class="card cardShow card-block mx-2" style="min-width: 100px; min-height: 200px;">Card</div>
+              <div class="card cardShow card-block mx-2" style="min-width: 100px; min-height: 200px;">Card</div>
+              <div class="card cardShow card-block mx-2" style="min-width: 100px; min-height: 200px;">Card</div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+      
+      <!---------------- end of Carrousel smaller screens ------------------------>
+
+
+
+      <!---------------- Pop up card on the user clicks on the card ------------------------>
+      
+      <div data-aos="fade-up" >
+
+        <div class="movie_card" id="bright">
+          <div class="info_section">
+            <div class="movie_header">
+              <img class="locandina" src="https://movieplayer.net-cdn.it/t/images/2017/12/20/bright_jpg_191x283_crop_q85.jpg"/>
+              <h1>Bright</h1>
+              <h4>2017, David Ayer</h4>
+              <span class="minutes">117 min</span>
+              <p class="type">Action, Crime, Fantasy</p>
+            </div>
+            <div class="movie_desc">
+              <p class="text">
+                Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for. 
+              </p>
+            </div>
+            <div class="movie_social">
+              <ul>
+                <li><i class="material-icons">share</i></li>
+                <li><i class="material-icons"></i></li>
+                <li><i class="material-icons">chat_bubble</i></li>
+              </ul>
+            </div>
+          </div>
+          <div class="blur_back bright_back"></div>
+        </div>
+      </div>
+  
+
+
+      
+
+
+
+      <!---------------- end of Carrousel smaller screens ------------------------>
+    
+
+
+
+    <!-------------------- Footer --------------------------->
+
+    <footer class="d-block d-lg-none fixed-bottom">
+        <div class="container mt-2">
+            <div class="row ">
+                <a class="col-3 d-flex flex-column align-items-center" href="index.html" style="cursor: pointer;">
+                    <img src="public/icons/home.svg" class="" alt ="" title="" style="width: 20px; height: 20px;"/>
+                    <span class="footer-icons-text footer-active">Home</span>
+                </a>
+                <a class="col-3 d-flex flex-column align-items-center" href="pages/comming-soon.html" style="cursor: pointer;">
+                    <img src="public/icons/comingsoon.svg"  class="" alt="" title="" style="width: 20px; height: 20px;" />
+                    <span class="footer-icons-text">Coming Soon</span>                    
+                </a>
+                <a class="col-3 d-flex flex-column align-items-center" href="#" style="cursor: pointer;">
+                    <img src="public/icons/search.svg"  class=""alt="" title="" style="width: 20px; height: 20px;"/>
+                    <span class="footer-icons-text">Search</span>                    
+                </a>
+                <a class="col-3 d-flex flex-column align-items-center" href="#" style="cursor: pointer;">
+                    <img src="public/icons/downloads.svg"  class="" alt="" title="" style="width: 20px; height: 20px;"/>  
+                    <span class="footer-icons-text">Transfers</span>                  
+                </a>
+            </div>
+          </div>
+        </footer>
+        
+        
+        <!-------------------- end of Footer --------------------->
+        
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script
+			  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+			  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+			  crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>              
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+        
+        
+        <!-- navbar transparent -->
+        <script>$(window).scroll(function(){$('nav').toggleClass('scrolled', $(this).scrollTop() > 100);});</script>
+        
+        
+        <script type="text/javascript">
+        
+        
+        // const settings = {
+          //   "async": true,
+          //   "crossDomain": true,
+          //   "url": "https://unogsng.p.rapidapi.com/images?netflixid=81037848&offset=3&limit=2",
+          //   "method": "GET",
+          //   "headers": {
+            //     "x-rapidapi-key": "d8d5a56404msh192545404e9c9f8p1d2548jsn8b9c8587e074",
+            //     "x-rapidapi-host": "unogsng.p.rapidapi.com"
+            //   }
+            // };
+            
+            // $.ajax(settings).done(function (response) {
+              //   console.log(response);
+              // });
+              
+              
+              $('.cardShow').click(function(event) {
+                event.preventDefault();
+                this.blur(); // Manually remove focus from clicked link.
+              $.get(this.href, function(html) {
+                $(html).appendTo('body').modal();
+              });
+            });
+            
+            $('#myModal').modal('show')
+            
+            
+            
+            
+            // try {
+              //   const response = await fetch("https://netflix-unofficial.p.rapidapi.com/api/directors", {
+                //       "headers": {
+                  //         "x-rapidapi-key": "d8d5a56404msh192545404e9c9f8p1d2548jsn8b9c8587e074",
+                  //         "x-rapidapi-host": "netflix-unofficial.p.rapidapi.com"
+                  //       }
+                  //   })
+                  //   const data = response.json();
+                  //   console.log(data)
+                  // } catch (error) {
+                    //   console.error(error);         
+                    // }
+                    
+                    </script>
+<script src="scripts/carroussel-slider-script.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 6,
+    spaceBetween: 10,
+    slidesPerGroup: 2,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+<script src="scripts/script.js"></script>
+
+</body>
+</html>
