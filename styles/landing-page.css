@@ -314,18 +314,34 @@ img {
 
 .btn-rounded {
 	border-radius: 5px;
+	background-color:#8C52FF;
+	color:white;
+}
+
+.btn-rounded:hover {
+	color:white;
 }
 
 .btn-xl {
 	font-size: 2rem;
 	padding: 1.5rem 2.1rem;
 	text-transform: uppercase;
+	background-color:#8C52FF;
+	color:white;
+}
+.btn-xl:hover {
+	color:white;
 }
 
 .btn-lg {
 	font-size: 1rem;
 	padding: 0.8rem 1.3rem;
 	text-transform: uppercase;
+	background-color:#8C52FF;
+	color:white;
+}
+.btn-lg:hover {
+	color:white;
 }
 
 .btn-icon {
