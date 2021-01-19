@@ -58,10 +58,10 @@ var vm = function () {
     //     return self.likesMovies.push(id);
     // }, self)
 
-    self.addFavorite = () => {
-        console.log(id);
-        return self.likesMovies.push(id);
-    }
+    // self.addFavorite = () => {
+    //     console.log(id);
+    //     return self.likesMovies.push(id);
+    // }
 //     likeMovies.push(Id);
 // localStorage.setItem('LikesMovies', likesMovies);
 

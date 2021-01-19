@@ -2,7 +2,7 @@ const movies = [
   {
     clasificacion: 'TV-MA',
     duracion: '1 h 39 min',
-    match: 'Nuevo',
+    match: 'Novo',
     nombre: 'La bestia',
     portada: 'https://occ-0-33-37.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABVK0soH12ei44FFHU4eatp3pyEkJ1qOuepwA_53K03GcUNBQvytHXoIZhjHuPGY-8oKp4oYsrx9vyD167RHxh6g3J2DtTV4mO4Y08OxKaMVDUHdgOhSlfd6_U6zzOljUFkafpc6zGeeoG-xsPFSFFi-fvLBXDdw-oTqs78ItMNaw-G4PUkJ8gagx.jpg?r=1a3',
     tags: ['Crudo', 'Enérgico', 'Thriller de acción'],
@@ -11,7 +11,7 @@ const movies = [
   {
     clasificacion: 'PG',
     duracion: '1 h 55 min',
-    match: 'Nuevo',
+    match: 'Novo',
     nombre: 'Las crónicas de navidad',
     portada: 'https://occ-0-33-37.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABb87DMORTCapwbwaXCscEoFbvLYStEWoSwX4uMYeLOzNF-Zqzci1caRK8-ZG4ReWGVGMCg71njV6E9RfMD9E5iQR_ngzpteOd3MlSkkLZ33bwqKUM4rQf7Z4fAXDXf1wCz4joq2mlZC6U824VT0OuKllTY3hGJOkCYYZLhUyQmrErtbiuWnJ_qs6.jpg?r=ab0',
     tags: ['Emocionante', 'Optimista', 'Comedia de acción'],
@@ -21,9 +21,9 @@ const movies = [
     clasificacion: 'TV-MA',
     duracion: '1 temporada',
     match: '94% para ti',
-    nombre: '100 días para enamorarnos',
+    nombre: '100 dias de namorados',
     portada: 'https://occ-0-33-37.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABQzbzH5gEmBD2J24xrtqHAC7A1Lt-j6II2X1asbvLRZGalrj0aFyyZMvx1Da3tUZhxs8a1C8ytMIMHQcEJSoQ8unhbBgaEgZByU--vBDvamJCxzwm_vT8VuQ-m8M1DlfT9Sau5xtSUWUmVOWXgf5w4DqYiYw.jpg?r=f7e',
-    tags: ['Telenovelesco', 'Emotivo', 'Romántico'],
+    tags: ['Telenovela', 'Emotivo', 'Romântico'],
     thumb: 'https://occ-0-33-37.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABQXnP1mibVfw3kySv4Wlzh1JrE2WyRv9J4aZbZ8_JDL2tEx953vHAtN0Nhve7YOvvv0HDcgHOXhC6-11S87fwTPrFQN_.jpg?r=8a4'
   },
   {
