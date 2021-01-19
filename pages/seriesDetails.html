@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -13,22 +13,21 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">    
     <link href="Content/themes/ui-darkness/jquery.ui.base.css"rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- styles -->
     <link href="../styles/styles.css" rel="stylesheet">
+    <link href="../styles/title-details.css" rel="stylesheet">
     <link href="../styles/carrousel-slider.css" rel="stylesheet">
     <link href="../styles/movie-card.css" rel="stylesheet">
     <link href="../styles/top-10.css" rel="stylesheet">
 
-    <!-- favicon -->
-    <link rel='icon' href='../public/logo/flix-favicon.svg' type='image/x-icon' />
-
+        <!-- favicon -->
+        <link rel='icon' href='../public/logo/flix-favicon.svg' type='image/x-icon' />
 </head>
 <body>
-
-
-      <!---------------- Navbar lg and xl screen--------------------->
-      <div class="d-none d-lg-block d-xl-block0">
+     <!---------------- Navbar lg and xl screen--------------------->
+     <div class="d-none d-lg-block d-xl-block0">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
           
             <a class="navbar-brand" href="../index.html"><img src="../public/logo/ITW_Ruca_flix.svg " alt="" title="" style="width: 130px; height:100%"/></a>
@@ -111,73 +110,59 @@
 
       <!---------------- end of Navbar xs to lg--------------------->
 
-
-
-
-
-    <!-- titles -->
-
-
-
-    <div class="container" style="margin-top: 100px;">
-        <div class="border-bottom pt-4 pb-2 mb-3">
-            <h2 data-bind="text:displayName"></h2>
-        </div>
-        <!-- ko if:records().length > 0 -->
-        <div class="col-12 small">
-            <div class="row">
-                <p class="mr-auto pt-2">
-                    <span data-bind="html: 'Page: ' + currentPage() + ' of ' + totalPages()"></span><br />
-                    <span data-bind="html: 'Titles: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
-                </p>
-                <div class="my-0 pt-3">
-                    <ul class="pagination">
-                        <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
-                        <li class="page-item"><a class="page-link" title="First Page" data-bind="attr: { href: './series.html?page=' + '1',  rel:'prev'}">⇤</a></li>
-                        <li class="page-item"><a class="page-link" title="Previous Page" data-bind="attr: { href: './series.html?page=' + previousPage(),  rel:'prev'}">←</a></li>
-                        <!-- /ko -->
-                        <!-- ko foreach: pageArray()-->
-                        <!-- ko if:$data == $parent.currentPage() -->
-                        <li class="active page-item"><a class="page-link" data-bind="attr: { title:'Current Page ' + $data }, text: $data"></a></li>
-                        <!-- /ko -->
-                        <!-- ko if:$data != $parent.currentPage() -->
-                        <li class="page-item"><a class="page-link" data-bind="attr: { href: './series.html?page=' + $data, title:'Goto Page ' + $data }, text:$data"></a></li>
-                        <!-- /ko -->
-                        <!-- /ko -->
-                        <!-- ko if: currentPage() < totalPages() - 4 && totalPages() > 9 -->
-                        <li class="page-item"><a class="page-link" title="Next Page" data-bind="attr: { href: './series.html?page=' + nextPage(), rel:'next' }">→</a></li>
-                        <li class="page-item"><a class="page-link" title="Last Page" data-bind="attr: { href: './series.html?page=' + totalPages() }">⇥</a></li>
-                        <!-- /ko -->
-                    </ul>
-                </div>
+      <div class="video-page">
+        <div class="video-page-header">
+          <div class="video-description">
+           <div class="header-left" style="margin-top: 80px;">
+            <img data-bind="attr:{src: ImageURL}">
+             <div class="btn btn-outline-ruca" style="width: fit-content;">
+               <i class="fas fa-check"></i> My List
+             </div>
             </div>
+            <div class="header-right">
+              <h1 data-bind="text:name()"></h1>
+              <h2 data-bind="text: releaseYear"> </h2><span data-bind="text: duration"></span>
+             <p data-bind="text: description"></p> 
+
+              <div data-bind="foreach: rating">
+                  <div class="rating" data-bind="text: Code + '', attr: { href: './ratingDetails?id=' + Id }" style="width: fit-content;"></div>
+              </div>  
+              <div class='info' data-bind="foreach: directors">
+                <h4>Director:</h4>
+                <h5 data-bind="text: Name + '', attr: { href: './directorDetails?id=' + Id }"></h5>
+              </div>
+             
+              <div class='info' data-bind="foreach: categories">
+                <h4>Categories:</h4>
+                <h5 data-bind="text: Name + '', attr: { href: './categoriesDetails?id=' + Id }"></h5>
+              </div>
+              <div class='info' data-bind="foreach: countries">
+                <h4>Countries:</h4>
+                <h5 data-bind="text: Name + '', attr: { href: './countriesDetails?id=' + Id }"></h5>
+              </div>
+              <div class='info' data-bind="foreach: type">
+                <h4>Type:</h4>
+                <h5 data-bind="text: Name + '', attr: { href: './typeDetails?id=' + Id }"></h5>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- /ko -->
-        <div class="clearfix"></div>
-<table class="table table-striped table-sm small">
-    <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Title</th>
-            <th scope="col" class="text-right"></th>
-        </tr>
-    </thead>
-    <tbody data-bind="foreach: records">
-        <tr>
-            <td data-bind="text:Id"></td>
-            <td data-bind="text:Name"></td>
-            <td class="text-right">
-                <a class="btn  btn-sm" data-bind="attr: { href:'./seriesDetails.html?id=' + Id }">
-                    <i class="fa fa-eye" title="Selecione para ver detalhes"></i>
-                </a>
-                <button class="btn btn-sm">
-                    <i class="fa fa-heart-o" data-bind="attr : { 'id': 'favourite_'+Id }" title="Selecione para adicionar aos favoritos"></i>
-                </button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+        <div class="streaming-container">
+         <img src="http://4.bp.blogspot.com/-Xx_xBL54Pas/TtkId59pLuI/AAAAAAAAIUc/T7v0-EqgEd0/s1600/bigfish5.jpg"/>
+          <div class="streaming-play">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+      <h4 class="col-md-2">Actors: </h4>
+          <div data-bind="foreach: actors">
+              <p data-bind="text: Name + '', attr: { href: './actorDetails?id=' + Id }"></p> (<span data-bind="text: Id"></span>)
+          </div>
+        </div>
     </div>
+
+
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -185,7 +170,7 @@
             <div class="modal-content">
                 <div class="modal-header bg-dark text-light">
                     <h5 class="modal-title" id="exampleModalLabel">
-                        <img src="../public/logo/ITW_Ruca_flix.svg" height="30" /> Loading data...
+                        <img src="../images/netflixIcon.png" height="30" /> Loading data...
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -198,44 +183,14 @@
         </div>
     </div>
 
-
-        <!-------------------- Footer --------------------------->
-
-        <footer class="d-block d-lg-none fixed-bottom">
-            <div class="container mt-2">
-                <div class="row ">
-                    <a class="col-3 d-flex flex-column align-items-center" href="../index.html" style="cursor: pointer;">
-                        <img src="../public/icons/home.svg" class="" alt ="" title="" style="width: 20px; height: 20px;"/>
-                        <span class="footer-icons-text footer-active">Home</span>
-                    </a>
-                    <a class="col-3 d-flex flex-column align-items-center" href="../pages/comming-soon.html" style="cursor: pointer;">
-                        <img src="../public/icons/comingsoon.svg"  class="" alt="" title="" style="width: 20px; height: 20px;" />
-                        <span class="footer-icons-text">Coming Soon</span>                    
-                    </a>
-                    <a class="col-3 d-flex flex-column align-items-center" href="#" style="cursor: pointer;">
-                        <img src="../public/icons/search.svg"  class=""alt="" title="" style="width: 20px; height: 20px;"/>
-                        <span class="footer-icons-text">Search</span>                    
-                    </a>
-                    <a class="col-3 d-flex flex-column align-items-center" href="#" style="cursor: pointer;">
-                        <img src="../public/icons/downloads.svg"  class="" alt="" title="" style="width: 20px; height: 20px;"/>  
-                        <span class="footer-icons-text">Transfers</span>                  
-                    </a>
-                </div>
-              </div>
-            </footer>
-            
-            
-            <!-------------------- end of Footer --------------------->
-
-            
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>              
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     
-    <!-- series script -->
-    <script src="../scripts/series.js"></script>
+    <!-- titleDetails script -->
+    <script src="../scripts/seriesDetails.js"></script>
     
     <!-- top 10 script -->
     <script src="../scripts/top-10.js"></script>

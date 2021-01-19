@@ -4,7 +4,7 @@ var vm = function () {
     //---Variáveis locais
     var self = this;
     self.baseUri = ko.observable('http://192.168.160.58/netflix/api/titles/');
-    self.displayName = 'Title Details';
+    self.displayName = 'Series Details';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     //--- Data Record
@@ -20,26 +20,9 @@ var vm = function () {
     self.rating = ko.observable('');
     self.releaseYear = ko.observable('');
     self.type = ko.observable('');
-    self.ImageURL = ko.observable('');
     //--- Page Events
     self.activate = function (id) {
-            const settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://unogsng.p.rapidapi.com/images?netflix+id="+ id + "&offset=3&limit=2",
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-key": "d8d5a56404msh192545404e9c9f8p1d2548jsn8b9c8587e074",
-                "x-rapidapi-host": "unogsng.p.rapidapi.com"
-              }
-            };
-            
-            $.ajax(settings).done(function (response) {
-                console.log(response.results[0].url)
-                self.ImageURL(response.results[0].url);
-              });
-
-        console.log('CALL: getTitle...');
+        console.log('CALL: getSeries...');
         var composedUri = self.baseUri() + id;
         ajaxHelper(composedUri, 'GET').done(function (data) {
             console.log(data);
