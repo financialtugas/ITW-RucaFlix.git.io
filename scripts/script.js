@@ -118,14 +118,14 @@ $(document).ready(function () {
     });
 
     //modal pop-up when the user clicks on a movie card
-    $('.swiper-slide').click(function(event) {
-        event.preventDefault();
-        this.blur(); // Manually remove focus from clicked link.
-    $.get(this.href,  function(html) {
-        $(html).appendTo('body').modal();
-    });
-    });
-    $('#movie-card').modal('show')
+    // $('.swiper-slide').click(function(event) {
+    //     event.preventDefault();
+    //     this.blur(); // Manually remove focus from clicked link.
+    //     $('#movie-card').modal('show')
+    //     $.get(this.href,  function(html) {
+    //         $(html).appendTo('body').modal();
+    // });
+    // });
 
 
     //nav-bar to transparent

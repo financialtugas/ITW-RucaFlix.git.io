@@ -148,16 +148,9 @@ window.addEventListener('load', () => {
       botones.map(boton => htmlBotones += `<div class="boton ${boton.clase}" ${boton.tooltip ? `data-tooltip="${boton.tooltip}"` : ''}>${boton.icono}</div>`);
       movies[index].tags.map(tag => htmlTags += `<div class="tag">${tag}</div>`);
       modal.innerHTML += `
-      <div class="portada" style="background-image: url(${movies[index].portada})"></div>
-      <div class="info">
-        <div class="botones">${htmlBotones}</div>
-        <div class="datos">
-          <div class="match">${movies[index].match}</div>
-          <div class="clasificacion">${movies[index].clasificacion}</div>
-          <div class="duracion">${movies[index].duracion}</div>
-        </div>
-        <div class="tags">${htmlTags}</div>
-      </div>`;
+      <div class="portada " style="background-image: url(${movies[index].portada})">
+      </div>
+`;
       if (element.getBoundingClientRect().x + 350 > window.innerWidth) {
         modal.classList.add('righted');
       } else if (element.getBoundingClientRect().x > (350 / 2)) {
@@ -166,13 +159,7 @@ window.addEventListener('load', () => {
       element.append(modal);
       setTimeout(() => modal.classList.remove('hidden'), 100);
     });
-    element.addEventListener('mouseleave', () => {
-      const modal = document.getElementById('movieModal');
-      if (modal) {
-        modal.classList.add('hidden');
-        setTimeout(() => modal.remove(), 300);
-      }
-    });
+
   })
 })
     
