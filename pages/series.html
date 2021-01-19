@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>RucaFlix Project</title>
+
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -19,8 +20,8 @@
     <link href="../styles/movie-card.css" rel="stylesheet">
     <link href="../styles/top-10.css" rel="stylesheet">
 
-        <!-- favicon -->
-        <link rel='icon' href='../public/logo/flix-favicon.svg' type='image/x-icon' />
+    <!-- favicon -->
+    <link rel='icon' href='../public/logo/flix-favicon.svg' type='image/x-icon' />
 
 </head>
 <body>
@@ -45,7 +46,7 @@
                 <a class="nav-link" href="series.html">Series</a>
               </li>
               <li class="nav-item  pr-2">
-                <a class="nav-link" href="filmes.html">Movies</a>
+                <a class="nav-link" href="titles.html">Movies</a>
               </li>
               <li class="nav-item pr-2">
                 <a class="nav-link" href="novidades-mais-vistas.html">Most Popular Watched</a>
@@ -116,7 +117,9 @@
 
     <!-- titles -->
 
-    <div class="container" style="margin-top: 80px;">
+
+
+    <div class="container" style="margin-top: 100px;">
         <div class="border-bottom pt-4 pb-2 mb-3">
             <h2 data-bind="text:displayName"></h2>
         </div>
@@ -128,32 +131,30 @@
                     <span data-bind="html: 'Titles: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
                 </p>
                 <div class="my-0 pt-3">
-                    <ul class="pagination" data-bind="foreach: pageArray">
+                    <ul class="pagination">
                         <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
-                        <li class="page-item"><a class="page-link" title="First Page" data-bind="attr: { href: './titles.html?page=' + '1',  rel:'prev'} ">⇤</a></li>
-                        <li class="page-item"><a class="page-link" title="Previous Page" data-bind="attr: { href: './titles.html?page=' + previousPage(),  rel:'prev'}">←</a></li>
+                        <li class="page-item"><a class="page-link" title="First Page" data-bind="attr: { href: './series.html?page=' + '1',  rel:'prev'}">⇤</a></li>
+                        <li class="page-item"><a class="page-link" title="Previous Page" data-bind="attr: { href: './series.html?page=' + previousPage(),  rel:'prev'}">←</a></li>
                         <!-- /ko -->
                         <!-- ko foreach: pageArray()-->
                         <!-- ko if:$data == $parent.currentPage() -->
                         <li class="active page-item"><a class="page-link" data-bind="attr: { title:'Current Page ' + $data }, text: $data"></a></li>
                         <!-- /ko -->
                         <!-- ko if:$data != $parent.currentPage() -->
-                        <li class="page-item"><a class="page-link" data-bind="attr: { href: './titles.html?page=' + $data, title:'Goto Page ' + $data }, text:$data"></a></li>
+                        <li class="page-item"><a class="page-link" data-bind="attr: { href: './series.html?page=' + $data, title:'Goto Page ' + $data }, text:$data"></a></li>
                         <!-- /ko -->
                         <!-- /ko -->
                         <!-- ko if: currentPage() < totalPages() - 4 && totalPages() > 9 -->
-                        <li class="page-item"><a class="page-link" title="Next Page" data-bind="attr: { href: './titles.html?page=' + nextPage(), rel:'next' }">→</a></li>
-                        <li class="page-item"><a class="page-link" title="Last Page" data-bind="attr: { href: './titles.html?page=' + totalPages() }">⇥</a></li>
+                        <li class="page-item"><a class="page-link" title="Next Page" data-bind="attr: { href: './series.html?page=' + nextPage(), rel:'next' }">→</a></li>
+                        <li class="page-item"><a class="page-link" title="Last Page" data-bind="attr: { href: './series.html?page=' + totalPages() }">⇥</a></li>
                         <!-- /ko -->
                     </ul>
                 </div>
             </div>
         </div>
-
         <!-- /ko -->
         <div class="clearfix"></div>
-
-<table class="table table-striped table-sm small " >
+<table class="table table-striped table-sm small">
     <thead>
         <tr>
             <th scope="col">ID</th>
@@ -166,24 +167,24 @@
             <td data-bind="text:Id"></td>
             <td data-bind="text:Name"></td>
             <td class="text-right">
-                <a class="btn btn-sm" data-bind="attr: { href:'./titleDetails.html?id=' + Id }">
+                <a class="btn  btn-sm" data-bind="attr: { href:'./titleDetails.html?id=' + Id }">
                     <i class="fa fa-eye" title="Selecione para ver detalhes"></i>
                 </a>
-                <button class="btn btn-sm" 
-                >
-                <!-- data-bind="click: $parent.addFavourite($data,Id)" -->
-                    <i class="fa fa-heart" style="color:white"  data-bind="attr : { 'id': 'favourite_'+Id }" title="Selecione para adicionar aos favoritos"></i>
+                <button class="btn btn-sm">
+                    <i class="fa fa-heart-o" data-bind="attr : { 'id': 'favourite_'+Id }" title="Selecione para adicionar aos favoritos"></i>
                 </button>
             </td>
         </tr>
     </tbody>
 </table>
     </div>
-
-
-
+    <nav class="navbar navbar-dark fixed-bottom bg-dark" role="navigation">
+        <div class="container">
+            <div class="navbar-text small">&copy;ITW2020 - Introdução às Tecnologias Web</div>
+            <div class="navbar-right navbar-text small d-sm-none d-md-block"><a href="http://www.ua.pt" title="Universidade de Aveiro">Universidade de Aveiro</a></div>
+        </div>
+    </nav>
     <!-- Modal -->
-
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -238,7 +239,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     
-    <!-- filmes script -->
+    <!-- series script -->
     <script src="../scripts/series.js"></script>
     
     <!-- top 10 script -->

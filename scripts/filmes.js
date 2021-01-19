@@ -4,11 +4,10 @@ var vm = function () {
     //---Variáveis locais
     var self = this;
     self.baseUri = ko.observable('http://192.168.160.58/netflix/api/titles');
-    self.displayName = 'Titles List';
+    self.displayName = 'Movies List';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     self.records = ko.observableArray([]);
-    self.likesMovies = ko.observableArray([]);
     self.currentPage = ko.observable(1);
     self.pagesize = ko.observable(20);
     self.totalRecords = ko.observable(50);
@@ -27,7 +26,6 @@ var vm = function () {
         return Math.min(self.currentPage() * self.pagesize(), self.totalRecords());
     }, self);
     self.totalPages = ko.observable(0);
-
     self.pageArray = function () {
         var list = [];
         var size = Math.min(self.totalPages(), 9);
@@ -43,33 +41,10 @@ var vm = function () {
             list.push(i + step);
         return list;
     };
-
-
-//ADD TO FAVORITES
-
-
-// data-bind="click: addFavourite.bind($data, id)"
-
-// self.addFavorite(id){
-    // }
-    
-    // self.addFavorite = ko.computed((data, id) =>{
-        
-    //     return self.likesMovies.push(id);
-    // }, self)
-
-    self.addFavorite = () => {
-        console.log(id);
-        return self.likesMovies.push(id);
-    }
-//     likeMovies.push(Id);
-// localStorage.setItem('LikesMovies', likesMovies);
-
-// localStorage.setItem('myCat', 'Tom');
-
     //--- Page Events
     self.activate = function (id) {
         console.log('CALL: getTitle...');
+        console.log(self.baseUri()) 
         var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
         ajaxHelper(composedUri, 'GET').done(function (data) {
             console.log(data);
@@ -121,8 +96,7 @@ var vm = function () {
 
         for (i = 0; i < sURLVariables.length; i++) {
             sParameterName = sURLVariables[i].split('=');
-
-            if (sParameterName[0] === sParam) {
+            if (sParameterName[0] === sParam) {1
                 return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
             }
         }
@@ -138,11 +112,34 @@ var vm = function () {
     }
 };
 
-$(window).scroll(function(){
-    $('nav').toggleClass('scrolled', $(this).scrollTop() > 100);
-});
-
 $(document).ready(function () {
     console.log("ready!");
     ko.applyBindings(new vm());
 });
+
+// $(window).scroll(function(){
+//     $('nav').toggleClass('scrolled', $(this).scrollTop() > 100);
+// });
+
+
+//ADD TO FAVORITES
+
+
+// data-bind="click: addFavourite.bind($data, id)"
+
+// self.addFavorite(id){
+    // }
+    
+    // self.addFavorite = ko.computed((data, id) =>{
+        
+    //     return self.likesMovies.push(id);
+    // }, self)
+
+    // self.addFavorite = () => {
+    //     console.log(id);
+    //     return self.likesMovies.push(id);
+    // }
+//     likeMovies.push(Id);
+// localStorage.setItem('LikesMovies', likesMovies);
+
+// localStorage.setItem('myCat', 'Tom');

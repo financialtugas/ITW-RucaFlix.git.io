@@ -45,6 +45,53 @@ const viewModel = {
         }
     ]
 }
+const sectionMovie= {
+    movies: [
+        { 
+            imgUrl: "public/imgs/image_movie.png", 
+            slideNum: 'slide 1'
+        },
+        { 
+            imgUrl: 'public/imgs/image_movie-2.png', 
+          slideNum: 'slide 2'
+          
+        },
+        { 
+            imgUrl: 'public/imgs/image_movie-3.png', 
+            slideNum: 'slide 3'
+            
+        },
+        { 
+            imgUrl: 'public/imgs/image_movie-4.png', 
+            slideNum: 'slide 4'
+            
+        },
+        { 
+            imgUrl: 'public/imgs/image_movie-5.png', 
+            slideNum: 'slide 5'
+        },
+        { 
+            imgUrl: 'public/imgs/image_movie-6.png', 
+            slideNum: 'slide 6' 
+        },
+        { 
+            imgUrl: 'public/imgs/image_movie-7.png', 
+            slideNum: 'slide 7'
+        },
+        { 
+            imgUrl: 'public/imgs/image_movie-8.png', 
+            slideNum: 'slide 8'
+        },
+        { 
+            imgUrl: 'public/imgs/image_movie-9.png', 
+            slideNum: 'slide 9'
+        },
+        { 
+            imgUrl: 'public/imgs/image_movie-10.png', 
+            slideNum: 'slide 10'
+        }
+    ]
+}
 
         
         // const settings = {
