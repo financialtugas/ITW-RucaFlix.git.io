@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -45,8 +45,8 @@
               <li class="nav-item pr-2">
                 <a class="nav-link" href="series.html">Series</a>
               </li>
-              <li class="nav-item active pr-2">
-                <a class="nav-link" href="titles.html">Movies</a>
+              <li class="nav-item pr-2">
+                <a class="nav-link" href="filmes.html">Movies</a>
               </li>
               <li class="nav-item pr-2">
                 <a class="nav-link" href="novidades-mais-vistas.html">Most Popular Watched</a>
@@ -129,20 +129,20 @@
                 <div class="my-0 pt-3">
                     <ul class="pagination">
                         <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
-                        <li class="page-item"><a class="page-link" title="First Page" data-bind="attr: { href: './titles.html?page=' + '1',  rel:'prev'}">⇤</a></li>
-                        <li class="page-item"><a class="page-link" title="Previous Page" data-bind="attr: { href: './titles.html?page=' + previousPage(),  rel:'prev'}">←</a></li>
+                        <li class="page-item"><a class="page-link" style="color: #8C52FF;" title="First Page" data-bind="attr: { href: './titles.html?page=' + '1',  rel:'prev'}">⇤</a></li>
+                        <li class="page-item"><a class="page-link" style="color: #8C52FF;" title="Previous Page" data-bind="attr: { href: './titles.html?page=' + previousPage(),  rel:'prev'}">←</a></li>
                         <!-- /ko -->
                         <!-- ko foreach: pageArray()-->
                         <!-- ko if:$data == $parent.currentPage() -->
-                        <li class="active page-item"><a class="page-link" data-bind="attr: { title:'Current Page ' + $data }, text: $data"></a></li>
+                        <li class="active page-item" ><a class="page-link" style="background-color: #8C52FF; border-color: #8C52FF;" data-bind="attr: { title:'Current Page ' + $data }, text: $data"></a></li>
                         <!-- /ko -->
                         <!-- ko if:$data != $parent.currentPage() -->
-                        <li class="page-item"><a class="page-link" data-bind="attr: { href: './titles.html?page=' + $data, title:'Goto Page ' + $data }, text:$data"></a></li>
+                        <li class="page-item"><a class="page-link" style="color: #8C52FF;" data-bind="attr: { href: './titles.html?page=' + $data, title:'Goto Page ' + $data }, text:$data"></a></li>
                         <!-- /ko -->
                         <!-- /ko -->
                         <!-- ko if: currentPage() < totalPages() - 4 && totalPages() > 9 -->
-                        <li class="page-item"><a class="page-link" title="Next Page" data-bind="attr: { href: './titles.html?page=' + nextPage(), rel:'next' }">→</a></li>
-                        <li class="page-item"><a class="page-link" title="Last Page" data-bind="attr: { href: './titles.html?page=' + totalPages() }">⇥</a></li>
+                        <li class="page-item"><a class="page-link" title="Next Page" style="color: #8C52FF;" ata-bind="attr: { href: './titles.html?page=' + nextPage(), rel:'next' }">→</a></li>
+                        <li class="page-item"><a class="page-link" title="Last Page" style="color: #8C52FF;" data-bind="attr: { href: './titles.html?page=' + totalPages() }">⇥</a></li>
                         <!-- /ko -->
                     </ul>
                 </div>
@@ -150,6 +150,24 @@
         </div>
         <!-- /ko -->
         <div class="clearfix"></div>
+        <div class="container">
+            <div class="row" data-bind="foreach: records">
+              <div class="col-md-4">
+                <div class="card mb-4" data-bind="attr: { href:'./titleDetails.html?id=' + Id }">
+                  <div class="card-block">
+                     <h4 class="card-title" data-bind="text:Name" style="color:black;"></h4>
+                    <h6 class="card-subtitle text-muted" data-bind="text:Id"></h6>
+                    <p class="card-text p-y-1" style="color:black;">Some quick example text to build on the card title .</p>
+                    <a class="btn btn-sm" data-bind="attr: { href:'./titleDetails.html?id=' + Id }">
+                        <i class="fa fa-eye" title="Selecione para ver detalhes"></i>
+                    </a>
+                    <a class="btn btn-sm" data-bind="attr : { 'id': 'favourite_'+Id }" title="Selecione para adicionar aos favoritos" style="color:black;">
+                        <i class="fa fa-heart-o" title="Adicionar aos Favoritos"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+          </div>
 <table class="table table-striped table-sm small">
     <thead>
         <tr>
@@ -231,7 +249,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     
     <!-- filmes script -->
-    <script src="../scripts/filmes.js"></script>
+    <script src="../scripts/searchResults.js"></script>
     
     <!-- top 10 script -->
     <script src="../scripts/top-10.js"></script>

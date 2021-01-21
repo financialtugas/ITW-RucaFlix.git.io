@@ -122,9 +122,12 @@ const sectionMovie= {
                   // } catch (error) {
                     //   console.error(error);         
                     // }
-
+                    
 $(document).ready(function () {
-    
+                        
+    $(window).scroll(function(){
+        $('nav').toggleClass('scrolled', $(this).scrollTop() > 100);
+    });
     console.log(viewModel)
     ko.applyBindings(viewModel);
 
@@ -176,9 +179,6 @@ $(document).ready(function () {
 
 
     //nav-bar to transparent
-    $(window).scroll(function(){
-        $('nav').toggleClass('scrolled', $(this).scrollTop() > 100);
-    });
 });
 
 

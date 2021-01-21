@@ -8,15 +8,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css"> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
     
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">    
-    <link href="Content/themes/ui-darkness/jquery.ui.base.css"rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/base/jquery-ui.css">
 
     <!-- styles -->
-    <link href="styles/styles.css" rel="stylesheet">
     <link href="styles/carrousel-netflix-slider.css" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
     <link href="styles/movie-card.css" rel="stylesheet">
     <link href="styles/index-animation.css" rel="stylesheet">
 
@@ -26,66 +27,92 @@
     <!-- favicon -->
     <link rel='icon' href='public/logo/flix-favicon.svg' type='image/x-icon'/>
 
+
     <title>RucaFlix Project</title>
 </head>
 <body>
         <!---------------- Navbar lg and xl screen--------------------->
-        <div class="d-none d-lg-block d-xl-block0">
-          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            
-              <a class="navbar-brand" href="#"><img src="public/logo/ITW_Ruca_flix.svg" alt="" title="" style="width: 130px; height:100%"/></a>
-            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item nav-link-color active pr-2">
-                  <a class="nav-link" href="#" id="nav-link-roxo">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item pr-2">
-                  <a class="nav-link nav-link-color " href="pages/series.html">Series</a>
-                </li>
-                <li class="nav-item pr-2">
-                  <a class="nav-link nav-link-color " href="pages/titles.html">Movies</a>
-                </li>
-                <li class="nav-item pr-2">
-                  <a class="nav-link nav-link-color " href="pages/novidades-mais-vistas.html">Most Popular Watched</a>
-                </li>
-                <li class="nav-item">
-                  <a class=" nav-link-color nav-link " href="pages/a-minha-lista.html">My list</a>
-                </li>
-              </ul>
-  
-              <div class="dropdown">
-                  <a class="dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <img src="public/icons/favicon.svg" alt="" style="width: 32px; height: 32px;"/>
-                  </a>
-                
-                  <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#"><img src="public/icons/ruben.svg" alt="" style="width: 32px; height: 32px; margin-right: 10px;"/>Ruben Rocha</a>
-                    <a class="dropdown-item" href="#"><img src="public/icons/binu.svg" alt="" style="width: 32px; height: 32px; margin-right: 10px;"/>Catarina Santos</a>
-                    <a class="dropdown-item" href="#">Gerir Perfis</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Conta</a>
-                    <a class="dropdown-item" href="#">Centro de Assistência</a>
-                    <a class="dropdown-item" href="pages/landing-page.html">Sair da Netflix</a>
-                  </div>
-                </div>
-  
-              
-              <form class="form-inline ml-2 mt-2 mt-md-0">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="searchBar" >
-                  <button class="btn btn-outline-ruca  my-2 my-sm-0" type="submit">Search</button>
-              </form>
-              
-              
-            </div>
-  
-          </nav>
-        </div>
+        <!---------------- Navbar lg and xl screen--------------------->
+      <div class="d-none d-lg-block d-xl-block0">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          
+            <a class="navbar-brand" href="index.html"><img src="public/logo/ITW_Ruca_flix.svg " alt="" title="" style="width: 130px; height:100%"/></a>
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active pr-2">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item  pr-2">
+                <a class="nav-link" href="pages/series.html">Series</a>
+              </li>
+              <li class="nav-item  pr-2">
+                <a class="nav-link" href="pages/titles.html">Movies</a>
+              </li>
+              <li class="nav-item pr-2">
+                <a class="nav-link" href="pages/novidades-mais-vistas.html">Most Popular Watched</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/a-minha-lista.html">My list</a>
+              </li>
+            </ul>
 
+            <div class="dropdown">
+                <a class="dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="public/icons/favicon.svg" alt="" style="width: 32px; height: 32px;"/>
+                </a>
+              
+                <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="#"><img src="public/icons/ruben.svg" alt="" style="width: 32px; height: 32px; margin-right: 10px;"/>Ruben Rocha</a>
+                  <a class="dropdown-item" href="#"><img src="public/icons/binu.svg" alt="" style="width: 32px; height: 32px; margin-right: 10px;"/>Catarina Santos</a>
+                  <a class="dropdown-item" href="#">Gerir Perfis</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Conta</a>
+                  <a class="dropdown-item" href="#">Centro de Assistência</a>
+                  <a class="dropdown-item" href="pages/landing-page.html">Sair do RUCAflix</a>
+                </div>
+              </div>
+
+            
+            <form class="form-inline ml-2 mt-2 mt-md-0" action="pages/searchResults.html">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="searchBar">
+                <button class="btn btn-outline-ruca  my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+            
+          </div>
+
+        </nav>
+      </div>
+
+      <!---------------- end of Navbar lg and xl screen--------------------->
+
+      <!---------------- Navbar  xs to lg--------------------->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark d-xs-block d-sm-block d-md-block d-lg-none">
+          
+            <a class="navbar-brand" href="#"><img src="public/logo/ITW_Ruca_flix.svg" alt="" title="" style="height: 100%; width: 130px;"/></a>
+          
+            <div class="dropdown ml-auto">
+                <a class="dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="public/icons/favicon.svg" alt="" style="width: 32px; height: 32px;"/>
+                </a>
+              
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="#"><img src="public/icons/ruben.svg" alt="" style="width: 32px; height: 32px; margin-right: 10px;"/>Ruben Rocha</a>
+                  <a class="dropdown-item" href="#"><img src="public/icons/binu.svg" alt="" style="width: 32px; height: 32px; margin-right: 10px;"/>Catarina Santos</a>
+                  <a class="dropdown-item" href="#">Gerir Perfis</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Conta</a>
+                  <a class="dropdown-item" href="#">Centro de Assistência</a>
+                  <a class="dropdown-item" href="#">Sair da Netflix</a>
+                </div>
+              </div>
+
+        </nav>
         <!---------------- end of Navbar lg and xl screen--------------------->
 
         <!---------------- Navbar  xs to lg--------------------->
@@ -108,11 +135,7 @@
                     <a class="dropdown-item" href="#">Sair do RUCAflix</a>
                   </div>
                 </div>
-<!--                 
-                <br><br><br><a class="nav-link">Series</a>
-                <a  class="nav-link">Movies</a> -->
-
-          </nav>
+              </nav>
 
         <!---------------- end of Navbar xs to lg--------------------->
 
@@ -429,8 +452,8 @@
         
         <!-------------------- end of Footer --------------------->
         
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>              
         <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

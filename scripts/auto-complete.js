@@ -12,16 +12,12 @@ $(document).ready(function () {
                     'Name': request.term
                 },
             }).done(data =>{
-                // console.log(data)
+                console.log(data)
                 let i=0;
-                let array = []
-                response($.each(data, (key, item) => {
-                    i++;
-                    array.push[item.Name];
-                    if(i<11){
-                        console.log(item.Name)
-                        return ({label:item.Name}) 
-                    } 
+                response($.map(data, item  => {
+                    
+                    console.log(item.Name)
+                    return {label:item.Name} 
                 }))
             })
         }

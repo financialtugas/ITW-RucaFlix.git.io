@@ -31,6 +31,7 @@ transform: scale(1);
   background:#000 !important;
 }
 
+
 /* dropdown da nav */
 
 .dropdown-menu{   
@@ -48,16 +49,26 @@ transform: scale(1);
   color:white;
 }
 
+/* searchbar */
+
+#searchBar{
+  background-color: transparent; border-color: #8C52FF; color:white;
+}
+
+#searchBar::placeholder{
+  color: white;
+}
+
 /* autocomplete */
 
-/* .ui-autocomplete { position: absolute; cursor: default; background:#CCC }    */
+.ui-autocomplete { position: absolute; cursor: default; background:#004AAD; border-radius: 5px; z-index: 2; }   
 
 /* workarounds */
 /* html .ui-autocomplete { width:1px; }  */
 /* without this, the menu expands to 100% in IE6 */
-/* .ui-menu {
+.ui-menu {
     list-style:none;
-    padding: 2px;
+    padding: 5px;
     margin: 0;
     display:block;
     float: left;
@@ -67,7 +78,7 @@ transform: scale(1);
 }
 .ui-menu .ui-menu-item {
     margin:0;
-    padding: 0;
+    padding: 4px;
     zoom: 1;
     float: left;
     clear: left;
@@ -84,7 +95,7 @@ transform: scale(1);
 .ui-menu .ui-menu-item a.ui-state-active {
     font-weight: normal;
     margin: -1px;
-} */
+}
 
 /* top image */
 
