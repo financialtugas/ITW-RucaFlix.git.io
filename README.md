@@ -1,5 +1,5 @@
 # ITW-RucaFlix.git.io
 
-Ainda por adicionar algumas feautures, tais como autocomplete, youtube api trailler, search, cards nos movies & series, ...
+Foi adicionado um search à página dos movies e das series.
 
-Espero que gostem!
+Foi adicionado um autocomplete. 

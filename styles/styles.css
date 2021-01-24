@@ -61,7 +61,7 @@ transform: scale(1);
 
 /* autocomplete */
 
-.ui-autocomplete { position: absolute; cursor: default; background:#004AAD; border-radius: 5px; z-index: 2; }   
+.ui-autocomplete { position: absolute; cursor: pointer; background:#004AAD; border-radius: 5px; z-index: 2; }   
 
 /* workarounds */
 /* html .ui-autocomplete { width:1px; }  */

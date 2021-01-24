@@ -20,24 +20,11 @@ var vm = function () {
     self.rating = ko.observable('');
     self.releaseYear = ko.observable('');
     self.type = ko.observable('');
+    self.encodedTitle = ko.observable("");
     self.ImageURL = ko.observable('');
     //--- Page Events
     self.activate = function (id) {
-            // const settings = {
-            // "async": true,
-            // "crossDomain": true,
-            // "url": "https://unogsng.p.rapidapi.com/images?netflix+id="+ id + "&offset=3&limit=2",
-            // "method": "GET",
-            // "headers": {
-            //     "x-rapidapi-key": "d8d5a56404msh192545404e9c9f8p1d2548jsn8b9c8587e074",
-            //     "x-rapidapi-host": "unogsng.p.rapidapi.com"
-            //   }
-            // };
             
-            // $.ajax(settings).done(function (response) {
-            //     console.log(response.results[0].url)
-            //     self.ImageURL(response.results[0].url);
-            //   });
 
         console.log('CALL: getTitle...');
         var composedUri = self.baseUri() + id;
@@ -55,7 +42,27 @@ var vm = function () {
             self.rating(data.Rating);
             self.releaseYear(data.ReleaseYear);
             self.type(data.Type);
+            self.encodedTitle(encodeURIComponent(data.Name).split("%20").join("+"));
             hideLoading();
+        });
+
+        var url = `http://www.omdbapi.com/?apikey=342e87c2&t=${self.encodedTitle()}&y=${self.releaseYear()}`;
+
+        $.ajax({
+            "method": "GET",
+            url,
+            dataType:"jsonp",
+            contentType:"application/json",
+            sucess: function(data){
+                console.log(data.Poster)
+                self.ImageURL(data.Poster);
+                hideLoading();
+            },
+            error: function(data){
+                console.log("Ajax Call["+uri+"] Failed..");
+                hideLoading();
+                self.error(errorThrown);
+            }
         });
     };
     //--- Internal functions

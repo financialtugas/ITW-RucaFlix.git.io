@@ -1,10 +1,15 @@
 // ViewModel KnockOut
+
 var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
-    self.baseUri = ko.observable('http://192.168.160.58/netflix/api/movies');
-    self.displayName = 'Movies List';
+    self.baseUri = ko.observable('http://192.168.160.58/netflix/api/Search/Titles');
+
+    self.TitlesSearch = ko.observableArray([])
+    self.titleSearch = ko.observable()
+    
+    self.displayName = 'Search Results List';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     self.records = ko.observableArray([]);
@@ -41,11 +46,38 @@ var vm = function () {
             list.push(i + step);
         return list;
     };
+
+
+    self.autocomplete = function(){
+        $("#searchBar").autocomplete({
+            minLength: 3,
+            source: function(request, response) {
+                self.titleSearch(request.term) 
+                $.ajax({
+                    url: "http://192.168.160.58/netflix/api/Search/Titles",
+                    type: 'get',
+                    dataType:'json',
+                    data:{
+                        'name': request.term
+                    },
+                }).done(data =>{
+                    console.log(data)
+                    response($.map(data, item  => {                    
+                        self.TitlesSearch.push(item)
+                        console.log(item.Name)
+                        return {label:item.Name} 
+                    }))
+                })
+            }
+        });
+        console.log(self.TitlesSearch());
+    }
+
     //--- Page Events
     self.activate = function (id) {
         console.log('CALL: getTitle...');
         console.log(self.baseUri()) 
-        var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
+        var composedUri = self.baseUri() + "?name=" + self.titleSearch() +"&page=" + id + "&pageSize=" + self.pagesize();
         ajaxHelper(composedUri, 'GET').done(function (data) {
             console.log(data);
             hideLoading();
@@ -59,8 +91,71 @@ var vm = function () {
             //self.SetFavourites();
         });
     };
+    
+
+    self.search = function(){
+
+    }
+    // $.ajax({
+    //     url: 'http://192.168.160.58/netflix/api/Search/Titles?name=' + self.titleSearch(),
+    //     type: 'GET',
+    //     dataType: 'json',
+
+    //     success: function(data){
+    //         if (data.length == 0){
+    //             self.records([]);
+    //             $("#NoResults").html("Sorry... we don't have that title!" + "<i style='padding-left:2%' class='fa fa-frown-o fa-2x' aria-hidden='true'></i>");
+    //             $("#NoResults").removeClass("d-none");
+    //             $("#reset").removeClass("d-none");
+    //         }
+
+    //         else{
+    //         self.records(data);
+    //         $("#NoResults").addClass("d-none");
+    //         self.records(data);
+    //         $("#NoResults").addClass("d-none");
+    //         console.log("He added")
+    //         $(".pagination").addClass("d-none");
+    //         $("#select").addClass("d-none");
+    //         $("#span1").addClass("d-none");
+    //         $("#span2").addClass("d-none");
+    //         $("#reset").removeClass("d-none");
+    //         self.TitlesSearch(self.records().length);
+    //         $("#total_search").removeClass("d-none");
+    //         }
+    //     },
+
+    //     error: function(){
+    //         console.log("Error has occured");
+    //     }
+    // });  
+
+    // self.reset = function(){
+    //     console.log("Resetting Search...")
+    //     self.titleSearch('');
+    //     $(".pagination").removeClass("d-none");
+    //     $("#select").removeClass("d-none");
+    //     $("#span1").removeClass("d-none");
+    //     $("#span2").removeClass("d-none");
+    //     $("#reset").addClass("d-none");
+    //     $("#total_search").addClass("d-none");
+    //     $('#searchbtn').attr('disabled', true);
+    //     $("#NoResults").addClass("d-none");
+    //     $("#footer").addClass('d-none');
+    //     var page = getUrlParameter('page')
+    //     if (page == undefined){
+    //         self.activate(1);
+    //     }
+    //     else {
+    //         self.activate(page)
+    //     }
+        
+    // }
+
     //--- Internal functions
     function ajaxHelper(uri, method, data) {
+        console.log(uri);
+        console.log(data);
         self.error(''); // Clear error message
         return $.ajax({
             type: method,

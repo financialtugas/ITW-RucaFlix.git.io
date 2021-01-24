@@ -16,7 +16,7 @@ $(document).ready(function () {
                 let i=0;
                 response($.map(data, item  => {
                     
-                    console.log(item.Name)
+                    // console.log(item.Name)
                     return {label:item.Name} 
                 }))
             })
